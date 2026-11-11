@@ -1,0 +1,26 @@
+{
+  "name": "Daithí O’Regan",
+  "preview": true,
+  "description": "Buachailli Dana: professional musicians with extremely competitive pricing. Two- to five-piece band lineups to suit your venue and requirements, plus solo bookings with Daithí O’Regan.",
+  "email": "DaithiORegan1@gmail.com",
+  "phone": "+353 87 098 6284",
+  "phoneLink": "+353870986284",
+  "bandName": "Buachailli Dana",
+  "events": [
+    "Weddings",
+    "Day twos",
+    "Birthdays",
+    "Corporate events"
+  ],
+  "bio": "Buachailli Dana is a band of professional musicians offering two- to five-piece lineups, based on the venue and your requirements, with extremely competitive pricing. Solo bookings are also available with Daithí O’Regan. Bookings include weddings, day twos, birthdays and corporate events. Setlists are catered to the venue and occasion.",
+  "heroImage": "/images/guitar.jpg",
+  "socials": [],
+  "setlistDraft": true,
+  "lineups": [
+    "Two piece",
+    "Three piece",
+    "Four piece",
+    "Five piece"
+  ],
+  "formAccessKey": "891e1be3-ec6e-4659-b42a-3c97a84993d5"
+}

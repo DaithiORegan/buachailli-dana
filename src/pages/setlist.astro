@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import site from '../data/site.json';
+import entries from '../data/setlist.json';
+const songs=(entries as {title:string;artist:string;category?:string;url?:string}[]).slice().sort((a,b)=>a.title.localeCompare(b.title));
+const categories=[...new Set(songs.map(s=>s.category).filter(Boolean))];
+---
+<Layout title={'Setlist — '+site.bandName+' & '+site.name} description="Draft song list for Buachailli Dana and solo bookings. Setlists catered to the venue and occasion.">
+<main id="main"><section class="section setlist-heading"><a class="text-link" href="/">← Back to bookings</a><span class="eyebrow light">BUACHAILLI DANA / DAITHÍ O’REGAN</span><h1>THE<br /><em>setlist.</em></h1><p>Setlist catered to the venue and occasion.<br />Include song requests when you enquire.</p></section><section class="section setlist-page" aria-labelledby="songs-title"><div class="section-heading"><div><span class="eyebrow">SONGS &amp; ARTISTS</span><h2 id="songs-title">SETLIST</h2></div><a class="pill wine" href="/#contact">Discuss your music ↗</a></div>{songs.length ? <>{site.setlistDraft && <p class="setlist-draft"><strong>Draft setlist.</strong> This list is being finalised. Please confirm specific songs when booking.</p>}<a class="text-link setlist-download" href="/downloads/setlist.txt" download>Download song list ↓</a><div class="setlist-controls"><label>Search songs or artists<input type="search" id="song-search" placeholder="Song title or artist" /></label>{categories.length>0 && <label>Category<select id="category-filter"><option value="">All categories</option>{categories.map(c=><option>{c}</option>)}</select></label>}</div><p id="song-count" class="song-count" role="status" aria-live="polite">{songs.length} songs</p><div class="song-table"><div class="song-table-head"><span>Song</span><span>Artist</span></div>{songs.map(s=><div class="song-row" data-search={s.title+' '+s.artist} data-category={s.category||''}><h3>{s.title}</h3><span>{s.artist}</span>{s.url && <a href={s.url} aria-label={'Listen to '+s.title+' by '+s.artist}>Listen ↗</a>}</div>)}</div><p id="no-songs" hidden>No songs match your search. Try another title or artist.</p></> : <div class="setlist-empty"><h3>SONG LIST TO FOLLOW</h3><p>The song list is being prepared. For now, email your requests or preferences when asking about a booking.</p><a class="text-link" href={'mailto:'+site.email+'?subject=Setlist%20enquiry'}>Ask about songs ↗</a></div>}</section></main>
+<script>
+  const search=document.querySelector<HTMLInputElement>('#song-search');
+  const filter=document.querySelector<HTMLSelectElement>('#category-filter');
+  const rows=[...document.querySelectorAll<HTMLElement>('.song-row')];
+  const normal=(s:string)=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase().trim();
+  function update(){const term=normal(search?.value||'');const category=filter?.value||'';let count=0;rows.forEach(row=>{const visible=normal(row.dataset.search||'').includes(term)&&(!category||row.dataset.category===category);row.hidden=!visible;if(visible)count++;});const counter=document.querySelector('#song-count');if(counter)counter.textContent=count+' '+(count===1?'song':'songs');const empty=document.querySelector<HTMLElement>('#no-songs');if(empty)empty.hidden=count>0;}
+  search?.addEventListener('input',update);filter?.addEventListener('change',update);
+</script>
+</Layout>

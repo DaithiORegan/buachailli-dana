@@ -1,0 +1,37 @@
+---
+import site from '../data/site.json';
+import '../styles.css';
+const { title = site.bandName + ' — Band & Solo Bookings | ' + site.name, description = site.description } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content={description} /><meta name="theme-color" content="#671d31" />
+  <meta property="og:title" content={title} /><meta property="og:description" content={description} /><meta property="og:type" content="website" />
+  {site.preview && <meta name="robots" content="noindex, nofollow" />}
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preload" href="/fonts/barlow-700.ttf" as="font" type="font/ttf" crossorigin />
+  <title>{title}</title>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="header">
+    <a class="brand" href="/" aria-label="Daithí O’Regan home">d<span class="brand-dot">.</span><small>DAITHÍ<br/>O’REGAN</small></a>
+    <nav class="desktop-nav" aria-label="Main navigation"><a href="/#band">Band</a><a href="/#solo">Solo</a><a href="/setlist/">Setlist</a><a href="/live/">Live dates</a><a href="/#about">About</a></nav>
+    <div class="header-actions"><a class="booking" href="/#contact">Check availability <span aria-hidden="true">↗</span></a><button class="menu-toggle" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false"><span></span><span></span></button></div>
+  </header>
+  <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation" hidden><a href="/#band">Band</a><a href="/#solo">Solo</a><a href="/setlist/">Setlist</a><a href="/live/">Live dates</a><a href="/#about">About</a><a href="/#contact">Bookings</a></nav>
+  <slot />
+  <footer class="footer"><a class="footer-name" href="/">DAITHÍ O’REGAN<span>Band &amp; solo bookings</span></a><div class="footer-links"><a href="/press/">Booking information ↗</a><a href="/#main">Back to top ↑</a></div><div class="footer-bottom"><span>© {new Date().getFullYear()} {site.name}</span><span>Buachailli Dana · Two to five piece</span></div>{site.preview && <p class="preview-notice">Preview photography — images are illustrative, not photographs of Daithí or Buachailli Dana.</p>}</footer>
+  <script>
+    const button = document.querySelector<HTMLButtonElement>('.menu-toggle');
+    const menu = document.querySelector<HTMLElement>('#mobile-menu');
+    function closeMenu() { if(menu && button) { menu.hidden = true; button.setAttribute('aria-expanded','false'); button.setAttribute('aria-label','Open menu'); } }
+    button?.addEventListener('click', () => { if(!menu) return; const open = button.getAttribute('aria-expanded') === 'true'; menu.hidden = open; button.setAttribute('aria-expanded', String(!open)); button.setAttribute('aria-label', open ? 'Open menu' : 'Close menu'); });
+    menu?.querySelectorAll('a').forEach(a=>a.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', e => {if(e.key === 'Escape') closeMenu();});
+    window.matchMedia('(min-width: 801px)').addEventListener('change', e => {if(e.matches) closeMenu();});
+  </script>
+</body>
+</html>

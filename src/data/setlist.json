@@ -1,0 +1,602 @@
+[
+  {
+    "title": "All I Want Is You",
+    "artist": "U2",
+    "category": "First dance & slow songs"
+  },
+  {
+    "title": "A Groovy Kind of Love",
+    "artist": "Phil Collins",
+    "category": "First dance & slow songs"
+  },
+  {
+    "title": "Bless the Broken Road",
+    "artist": "Rascal Flatts",
+    "category": "First dance & slow songs"
+  },
+  {
+    "title": "Can’t Help Falling in Love",
+    "artist": "Elvis Presley",
+    "category": "First dance & slow songs"
+  },
+  {
+    "title": "Days Like This",
+    "artist": "Van Morrison",
+    "category": "First dance & slow songs"
+  },
+  {
+    "title": "Have I Told You Lately",
+    "artist": "Van Morrison",
+    "category": "First dance & slow songs"
+  },
+  {
+    "title": "How Long Will I Love You",
+    "artist": "The Waterboys",
+    "category": "First dance & slow songs"
+  },
+  {
+    "title": "Into the Mystic",
+    "artist": "Van Morrison",
+    "category": "First dance & slow songs"
+  },
+  {
+    "title": "Never Change",
+    "artist": "Picture This",
+    "category": "First dance & slow songs"
+  },
+  {
+    "title": "Perfect",
+    "artist": "Ed Sheeran",
+    "category": "First dance & slow songs"
+  },
+  {
+    "title": "Rainy Night in Soho",
+    "artist": "The Pogues",
+    "category": "First dance & slow songs"
+  },
+  {
+    "title": "Stand by Me",
+    "artist": "Ben E. King",
+    "category": "First dance & slow songs"
+  },
+  {
+    "title": "Take My Hand",
+    "artist": "Picture This",
+    "category": "First dance & slow songs"
+  },
+  {
+    "title": "The One",
+    "artist": "Kodaline",
+    "category": "First dance & slow songs"
+  },
+  {
+    "title": "The One I Love",
+    "artist": "David Gray",
+    "category": "First dance & slow songs"
+  },
+  {
+    "title": "The Voyage",
+    "artist": "Christy Moore",
+    "category": "First dance & slow songs"
+  },
+  {
+    "title": "To Love Somebody",
+    "artist": "Bee Gees",
+    "category": "First dance & slow songs"
+  },
+  {
+    "title": "When You Say Nothing at All",
+    "artist": "Alison Krauss",
+    "category": "First dance & slow songs"
+  },
+  {
+    "title": "Wonderful Tonight",
+    "artist": "Eric Clapton",
+    "category": "First dance & slow songs"
+  },
+  {
+    "title": "With or Without You",
+    "artist": "U2",
+    "category": "First dance & slow songs"
+  },
+  {
+    "title": "Bad Moon Rising",
+    "artist": "Creedence Clearwater Revival",
+    "category": "Pop & rock classics"
+  },
+  {
+    "title": "Breakfast at Tiffany’s",
+    "artist": "Deep Blue Something",
+    "category": "Pop & rock classics"
+  },
+  {
+    "title": "Brown Eyed Girl",
+    "artist": "Van Morrison",
+    "category": "Pop & rock classics"
+  },
+  {
+    "title": "Burning Love",
+    "artist": "Elvis Presley",
+    "category": "Pop & rock classics"
+  },
+  {
+    "title": "Cecilia",
+    "artist": "Simon & Garfunkel",
+    "category": "Pop & rock classics"
+  },
+  {
+    "title": "Crazy Little Thing Called Love",
+    "artist": "Queen",
+    "category": "Pop & rock classics"
+  },
+  {
+    "title": "Dancing in the Dark",
+    "artist": "Bruce Springsteen",
+    "category": "Pop & rock classics"
+  },
+  {
+    "title": "Don’t Look Back in Anger",
+    "artist": "Oasis",
+    "category": "Pop & rock classics"
+  },
+  {
+    "title": "Great Balls of Fire",
+    "artist": "Jerry Lee Lewis",
+    "category": "Pop & rock classics"
+  },
+  {
+    "title": "I’m a Believer",
+    "artist": "The Monkees",
+    "category": "Pop & rock classics"
+  },
+  {
+    "title": "Johnny B. Goode",
+    "artist": "Chuck Berry",
+    "category": "Pop & rock classics"
+  },
+  {
+    "title": "Proud Mary",
+    "artist": "Creedence Clearwater Revival",
+    "category": "Pop & rock classics"
+  },
+  {
+    "title": "Rockin’ All Over the World",
+    "artist": "Status Quo",
+    "category": "Pop & rock classics"
+  },
+  {
+    "title": "Shout",
+    "artist": "The Isley Brothers",
+    "category": "Pop & rock classics"
+  },
+  {
+    "title": "Sit Down",
+    "artist": "James",
+    "category": "Pop & rock classics"
+  },
+  {
+    "title": "Summer of ’69",
+    "artist": "Bryan Adams",
+    "category": "Pop & rock classics"
+  },
+  {
+    "title": "Suspicious Minds",
+    "artist": "Elvis Presley",
+    "category": "Pop & rock classics"
+  },
+  {
+    "title": "Sweet Caroline",
+    "artist": "Neil Diamond",
+    "category": "Pop & rock classics"
+  },
+  {
+    "title": "Sweet Home Alabama",
+    "artist": "Lynyrd Skynyrd",
+    "category": "Pop & rock classics"
+  },
+  {
+    "title": "Walk of Life",
+    "artist": "Dire Straits",
+    "category": "Pop & rock classics"
+  },
+  {
+    "title": "We Will Rock You",
+    "artist": "Queen",
+    "category": "Pop & rock classics"
+  },
+  {
+    "title": "Have You Ever Seen the Rain",
+    "artist": "Creedence Clearwater Revival",
+    "category": "Pop & rock classics"
+  },
+  {
+    "title": "I’m Gonna Be (500 Miles)",
+    "artist": "The Proclaimers",
+    "category": "Pop & rock classics"
+  },
+  {
+    "title": "After All",
+    "artist": "The Frank and Walters",
+    "category": "Modern favourites"
+  },
+  {
+    "title": "Blame It on Me",
+    "artist": "George Ezra",
+    "category": "Modern favourites"
+  },
+  {
+    "title": "Candy",
+    "artist": "Paolo Nutini",
+    "category": "Modern favourites"
+  },
+  {
+    "title": "Dreams",
+    "artist": "The Cranberries",
+    "category": "Modern favourites"
+  },
+  {
+    "title": "Freed from Desire",
+    "artist": "Gala",
+    "category": "Modern favourites"
+  },
+  {
+    "title": "Good Riddance (Time of Your Life)",
+    "artist": "Green Day",
+    "category": "Modern favourites"
+  },
+  {
+    "title": "Ho Hey",
+    "artist": "The Lumineers",
+    "category": "Modern favourites"
+  },
+  {
+    "title": "I Will Wait",
+    "artist": "Mumford & Sons",
+    "category": "Modern favourites"
+  },
+  {
+    "title": "Little Lion Man",
+    "artist": "Mumford & Sons",
+    "category": "Modern favourites"
+  },
+  {
+    "title": "Love Story",
+    "artist": "Taylor Swift",
+    "category": "Modern favourites"
+  },
+  {
+    "title": "Maniac 2000",
+    "artist": "Mark McCabe",
+    "category": "Modern favourites"
+  },
+  {
+    "title": "Mr. Brightside",
+    "artist": "The Killers",
+    "category": "Modern favourites"
+  },
+  {
+    "title": "Paradise",
+    "artist": "George Ezra",
+    "category": "Modern favourites"
+  },
+  {
+    "title": "Pink Pony Club",
+    "artist": "Chappell Roan",
+    "category": "Modern favourites"
+  },
+  {
+    "title": "Riptide",
+    "artist": "Vance Joy",
+    "category": "Modern favourites"
+  },
+  {
+    "title": "Shotgun",
+    "artist": "George Ezra",
+    "category": "Modern favourites"
+  },
+  {
+    "title": "Shut Up and Dance",
+    "artist": "Walk the Moon",
+    "category": "Modern favourites"
+  },
+  {
+    "title": "Teenage Dirtbag",
+    "artist": "Wheatus",
+    "category": "Modern favourites"
+  },
+  {
+    "title": "This Is the Life",
+    "artist": "Amy Macdonald",
+    "category": "Modern favourites"
+  },
+  {
+    "title": "Wake Me Up",
+    "artist": "Avicii",
+    "category": "Modern favourites"
+  },
+  {
+    "title": "What’s Up?",
+    "artist": "4 Non Blondes",
+    "category": "Modern favourites"
+  },
+  {
+    "title": "Zombie",
+    "artist": "The Cranberries",
+    "category": "Modern favourites"
+  },
+  {
+    "title": "9 to 5",
+    "artist": "Dolly Parton",
+    "category": "Country & quickstep"
+  },
+  {
+    "title": "Copperhead Road",
+    "artist": "Steve Earle",
+    "category": "Country & quickstep"
+  },
+  {
+    "title": "Cotton Eye Joe",
+    "artist": "Traditional",
+    "category": "Country & quickstep"
+  },
+  {
+    "title": "Dance the Night Away",
+    "artist": "The Mavericks",
+    "category": "Country & quickstep"
+  },
+  {
+    "title": "Folsom Prison Blues",
+    "artist": "Johnny Cash",
+    "category": "Country & quickstep"
+  },
+  {
+    "title": "Forever and Ever, Amen",
+    "artist": "Randy Travis",
+    "category": "Country & quickstep"
+  },
+  {
+    "title": "I Walk the Line",
+    "artist": "Johnny Cash",
+    "category": "Country & quickstep"
+  },
+  {
+    "title": "Me and Bobby McGee",
+    "artist": "Kris Kristofferson",
+    "category": "Country & quickstep"
+  },
+  {
+    "title": "On the Road Again",
+    "artist": "Willie Nelson",
+    "category": "Country & quickstep"
+  },
+  {
+    "title": "Past the Point of Rescue",
+    "artist": "Mick Hanly",
+    "category": "Country & quickstep"
+  },
+  {
+    "title": "Ring of Fire",
+    "artist": "Johnny Cash",
+    "category": "Country & quickstep"
+  },
+  {
+    "title": "Speed of the Sound of Loneliness",
+    "artist": "John Prine",
+    "category": "Country & quickstep"
+  },
+  {
+    "title": "Take Me Home, Country Roads",
+    "artist": "John Denver",
+    "category": "Country & quickstep"
+  },
+  {
+    "title": "The Last Thing on My Mind",
+    "artist": "Tom Paxton",
+    "category": "Country & quickstep"
+  },
+  {
+    "title": "Travelin’ Soldier",
+    "artist": "The Chicks",
+    "category": "Country & quickstep"
+  },
+  {
+    "title": "Wagon Wheel",
+    "artist": "Old Crow Medicine Show",
+    "category": "Country & quickstep"
+  },
+  {
+    "title": "Beeswing",
+    "artist": "Richard Thompson",
+    "category": "Irish & folk"
+  },
+  {
+    "title": "Brewing Up a Storm",
+    "artist": "The Stunning",
+    "category": "Irish & folk"
+  },
+  {
+    "title": "Caledonia",
+    "artist": "Dougie MacLean",
+    "category": "Irish & folk"
+  },
+  {
+    "title": "Crazy World",
+    "artist": "Aslan",
+    "category": "Irish & folk"
+  },
+  {
+    "title": "Dirty Old Town",
+    "artist": "Ewan MacColl",
+    "category": "Irish & folk"
+  },
+  {
+    "title": "Fiddler’s Green",
+    "artist": "John Conolly",
+    "category": "Irish & folk"
+  },
+  {
+    "title": "Fisherman’s Blues",
+    "artist": "The Waterboys",
+    "category": "Irish & folk"
+  },
+  {
+    "title": "Galway Girl",
+    "artist": "Steve Earle",
+    "category": "Irish & folk"
+  },
+  {
+    "title": "I Used to Love Her",
+    "artist": "The Saw Doctors",
+    "category": "Irish & folk"
+  },
+  {
+    "title": "I’ll Tell Me Ma",
+    "artist": "Traditional",
+    "category": "Irish & folk"
+  },
+  {
+    "title": "I’m Shipping Up to Boston",
+    "artist": "Dropkick Murphys",
+    "category": "Irish & folk"
+  },
+  {
+    "title": "Sally MacLennane",
+    "artist": "The Pogues",
+    "category": "Irish & folk"
+  },
+  {
+    "title": "Some Say the Devil Is Dead",
+    "artist": "Traditional",
+    "category": "Irish & folk"
+  },
+  {
+    "title": "Spancil Hill",
+    "artist": "Traditional",
+    "category": "Irish & folk"
+  },
+  {
+    "title": "Star of the County Down",
+    "artist": "Traditional",
+    "category": "Irish & folk"
+  },
+  {
+    "title": "The Auld Triangle",
+    "artist": "The Dubliners",
+    "category": "Irish & folk"
+  },
+  {
+    "title": "The Black Velvet Band",
+    "artist": "Traditional",
+    "category": "Irish & folk"
+  },
+  {
+    "title": "The Galway Shawl",
+    "artist": "Traditional",
+    "category": "Irish & folk"
+  },
+  {
+    "title": "The Hills of Donegal",
+    "artist": "Goats Don’t Shave",
+    "category": "Irish & folk"
+  },
+  {
+    "title": "The Leaving of Liverpool",
+    "artist": "Traditional",
+    "category": "Irish & folk"
+  },
+  {
+    "title": "The Red Rose Café",
+    "artist": "The Fureys",
+    "category": "Irish & folk"
+  },
+  {
+    "title": "The Rocky Road to Dublin",
+    "artist": "Traditional",
+    "category": "Irish & folk"
+  },
+  {
+    "title": "The Spanish Lady",
+    "artist": "Traditional",
+    "category": "Irish & folk"
+  },
+  {
+    "title": "The Wild Rover",
+    "artist": "Traditional",
+    "category": "Irish & folk"
+  },
+  {
+    "title": "Whiskey in the Jar",
+    "artist": "Traditional",
+    "category": "Irish & folk"
+  },
+  {
+    "title": "Wild Mountain Thyme",
+    "artist": "Traditional",
+    "category": "Irish & folk"
+  },
+  {
+    "title": "Valerie",
+    "artist": "Mark Ronson feat. Amy Winehouse",
+    "category": "Soul, disco & party favourites"
+  },
+  {
+    "title": "Superstition",
+    "artist": "Stevie Wonder",
+    "category": "Soul, disco & party favourites"
+  },
+  {
+    "title": "Dancing Queen",
+    "artist": "ABBA",
+    "category": "Soul, disco & party favourites"
+  },
+  {
+    "title": "Uptown Funk",
+    "artist": "Mark Ronson feat. Bruno Mars",
+    "category": "Soul, disco & party favourites"
+  },
+  {
+    "title": "September",
+    "artist": "Earth, Wind & Fire",
+    "category": "Soul, disco & party favourites"
+  },
+  {
+    "title": "Signed, Sealed, Delivered (I’m Yours)",
+    "artist": "Stevie Wonder",
+    "category": "Soul, disco & party favourites"
+  },
+  {
+    "title": "Get Lucky",
+    "artist": "Daft Punk feat. Pharrell Williams",
+    "category": "Soul, disco & party favourites"
+  },
+  {
+    "title": "I Wanna Dance with Somebody",
+    "artist": "Whitney Houston",
+    "category": "Soul, disco & party favourites"
+  },
+  {
+    "title": "Dancing in the Moonlight",
+    "artist": "Toploader",
+    "category": "Soul, disco & party favourites"
+  },
+  {
+    "title": "Sex on Fire",
+    "artist": "Kings of Leon",
+    "category": "Soul, disco & party favourites"
+  },
+  {
+    "title": "Wonderwall",
+    "artist": "Oasis",
+    "category": "Soul, disco & party favourites"
+  },
+  {
+    "title": "Sweet Child o’ Mine",
+    "artist": "Guns N’ Roses",
+    "category": "Soul, disco & party favourites"
+  },
+  {
+    "title": "Angels",
+    "artist": "Robbie Williams",
+    "category": "Soul, disco & party favourites"
+  }
+]

@@ -1,0 +1,118 @@
+# Daithí O’Regan — Music
+
+A self-hostable booking and information website in maroon, warm cream and charcoal. Includes solo and band booking sections, an email-enquiry form, booking-information page, searchable setlist, custom 404, mobile navigation and local fonts. No accounts, database or runtime Node server. No analytics or third-party scripts. Images and fonts are served locally.
+
+## Automatic publishing with Cloudflare Pages
+
+Create a new Pages project, choose **Connect to Git**, and select this repository.
+Use production branch **main**, build command **npm run build**, output directory **dist**, and Node **22**. Leave the root directory at the repository root.
+
+Each subsequent commit to main will trigger a new deployment automatically. The account-side Cloudflare connection is not yet configured. An existing Direct Upload project cannot be switched to native Git integration; create a Git-connected project or use GitHub Actions with Wrangler to publish to the existing one.
+
+Official guides:
+- https://developers.cloudflare.com/pages/get-started/git-integration/
+- https://developers.cloudflare.com/pages/how-to/use-direct-upload-with-continuous-integration/
+
+Generated ZIPs, hosting-provider identity files and local dependencies are excluded from this repository. The Web3Forms identifier is intentionally public; it is not a secret email credential. Automatic thank-you emails are not enabled.
+
+## Run and edit the source
+
+```sh
+npm ci
+npm run dev
+```
+
+Open the local address printed by Astro. Then build:
+
+```sh
+npm run build
+```
+
+Upload the **contents of `dist/`**. `npm run preview` lets you inspect the built output locally. The website uses root-relative URLs and should be hosted at the root of its own domain or subdomain, rather than inside a subfolder. A filesystem double-click is not a supported preview: use an HTTP server.
+
+For a quick local preview of the built files, run this from dist/:
+
+```sh
+python3 -m http.server 8080
+```
+
+Then visit http://localhost:8080.
+
+## Update booking information
+
+Edit `src/data/site.json` and run `npm run build`. It contains the artist name, band name, email, display phone number, international dialling link, event types and short description. Band options range from two to five piece, based on venue and requirements. The lineups array controls the badges and enquiry options. Band bookings appear before solo bookings throughout the homepage, navigation and enquiry choices. Hero name styling and descriptive copy live in `src/pages/index.astro`.
+
+The booking form submits directly from the browser to Web3Forms and displays a confirmation on the same page. It requires a verified public Web3Forms form access key for the destination email in the formAccessKey field in site.json. The key is intentionally public and is not a Gmail credential or secret server API key. Create it at https://web3forms.com/ using the destination booking email, then rebuild and redeploy. Never place a Gmail password or a secret email-provider API key in the static website.
+
+The supplied Web3Forms key is configured for the owner’s booking email. If it is removed or missing the form displays an unavailable message; it does not pretend to send. On submission it prevents duplicate clicks, times out after 20 seconds, preserves input on failure and shows success only after the provider confirms acceptance. Provider acceptance does not guarantee inbox placement; check the recipient inbox and spam folder during the first live test. Spam protection includes a honeypot field and the provider’s filtering. The form sends visitor details to Web3Forms only when submitted. Direct email and phone links remain available.
+
+The supplied Irish number is displayed as +353 87 098 6284 and dialled as +353870986284.
+
+
+### Setlist
+
+Edit `src/data/setlist.json`. It currently contains 120 draft wedding standards for the owner to review. No Ultimate Guitar content was accessed or imported. Remove any songs you do not perform. The setlistDraft flag in site.json displays a draft notice until confirmed. Song titles, artist names and broad categories are metadata only; no lyrics, chords or tabs are included. Add entries such as:
+
+```json
+[{"title":"Your song title","artist":"Original artist","category":"Your category","url":"https://your-listening-link"}]
+```
+
+Only title and artist are required. Category and listening URL are optional. The dedicated /setlist/ page sorts songs alphabetically and enables title/artist search and category filtering when there are entries. No lyrics, chords or tablature are needed.
+
+`preview` is currently true: this keeps the stock-photo notice and noindex metadata. Replace the illustrative photos before removing the notice. Set preview to false once the content is ready. Fonts and images are local. No fabricated reviews, awards, prices, equipment specifications, travel radius or performance durations are included.
+
+The downloadable booking-information text is regenerated by the build from site.json. The /press/ route remains available and now contains booking information.
+
+## Host on a VPS with Caddy
+
+Upload `dist/` into `/var/www/daithi-music`. Example production Caddyfile (replace the example domain with your own):
+
+```caddyfile
+music.example.com {
+    root * /var/www/daithi-music
+    encode zstd gzip
+    file_server
+    handle_errors {
+        rewrite * /404.html
+        file_server
+    }
+}
+```
+
+Point the domain's DNS to your server and allow ports 80 and 443. Caddy handles HTTPS certificates. Reload Caddy after editing its configuration. Existing Nginx/Apache/static hosting works too; point the document root at the built files and configure `/404.html` as the error page.
+
+## Optional Docker
+
+A multi-stage Dockerfile builds the source and serves only the static output through Caddy:
+
+```sh
+docker compose up --build -d
+```
+
+Visit http://localhost:8080. For a public domain, put this behind your existing HTTPS reverse proxy. The included container is an HTTP service, not a preconfigured domain/certificate deployment. Docker configuration is supplied but was not executed in this environment.
+
+## Design and assets
+
+Visual direction originated with Abrar Akib’s Mason Jett concept on Dribbble:
+https://dribbble.com/shots/27649018-Mason-Jett-A-Bold-Music-Artist-Web-Experience
+
+The code, composition, wording and typographic artist mark were created for this site. No Dribbble images or source code are included. No third-party portrait is presented as Daithí O’Regan. The site contains no fabricated show dates, release dates, awards, reviews or artist biography claims.
+
+See `ASSETS.md` for photograph sources and font licence information.
+
+## Verification
+
+Production build and a static integrity audit check local pages, links, fragment targets and assets. Browser visual/interaction QA was not available in the provided environment. Docker deployment has not been executed. Host-specific DNS/TLS configuration must be completed on your own hosting.
+
+Booking structure reference: https://www.suitcasesessions.ie/ (lineup choices, booking information and contact flow). The site uses original text based on the owner’s supplied services. No competitor photographs, reviews or service claims are reused.
+
+Setlist research references (metadata only; selection reordered alphabetically and independently categorised):
+- https://www.thebuachaills.com/wedding-setlist
+- https://www.blushweddingmusic.com/set-lists/
+- https://www.bentleyboysband.ie/wedding-songs
+
+The draft is a starting point for the owner, not a claim that every song is confirmed for every lineup. public/downloads/setlist.txt is generated from setlist.json during the build.
+
+## Public live dates
+
+Edit src/data/live-dates.json to update the /live/ page. Each entry has date (YYYY-MM-DD), venue, location and lineup. The homepage previews the first three dates in chronological order. The live page displays the complete 2027 schedule with a venue filter; it deliberately labels the year rather than treating historical dates as upcoming. Remove or replace dates as you update the schedule. The supplied private wedding is omitted from both the site and its source data. No start times, prices or admission conditions have been invented. The Ashe Hotel lineup is unspecified and shown as to be confirmed.

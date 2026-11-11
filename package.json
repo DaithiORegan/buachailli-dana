@@ -1,0 +1,15 @@
+{
+  "name": "daithi-oregan-music",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev --host 0.0.0.0",
+    "build": "node scripts/artist-info.mjs && astro build",
+    "preview": "astro preview --host 0.0.0.0",
+    "test": "node --test tests/*.mjs"
+  },
+  "dependencies": {
+    "astro": "^5.16.0"
+  }
+}

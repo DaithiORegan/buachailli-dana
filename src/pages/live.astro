@@ -1,0 +1,16 @@
+---
+import Layout from '../layouts/Layout.astro';
+import site from '../data/site.json';
+import entries from '../data/live-dates.json';
+const dates=entries.slice().sort((a,b)=>a.date.localeCompare(b.date));
+const venues=[...new Set(dates.map(d=>d.venue))];
+const label=(date:string)=>new Date(date+'T12:00:00Z').toLocaleDateString('en-IE',{weekday:'long',day:'numeric',month:'long',year:'numeric',timeZone:'Europe/London'});
+---
+<Layout title={'Where to see us — '+site.bandName} description="Public live dates for Buachailli Dana in 2027. Adams Bar in Dingle, Hannah Bawns in Cork city and the Ashe Hotel in Tralee.">
+<main id="main"><section class="section live-page-heading"><a class="text-link" href="/">← Back to bookings</a><span class="eyebrow light">BUACHAILLI DANA / LIVE DATES</span><h1>WHERE TO<br /><em>see us.</em></h1><p>2027 dates, venues and lineups.</p></section><section class="section live-dates-page" aria-labelledby="schedule-title"><div class="section-heading"><div><span class="eyebrow">2027 SCHEDULE</span><h2 id="schedule-title">LIVE DATES</h2></div><a class="pill wine" href="/#contact">Enquire about a booking ↗</a></div><div class="gig-controls"><label for="venue-filter">Filter by venue<select id="venue-filter"><option value="">All venues</option>{venues.map(v=><option>{v}</option>)}</select></label><p id="gig-count" role="status" aria-live="polite">{dates.length} dates</p></div><div class="gig-list">{dates.map(gig=><article class="gig-row" data-venue={gig.venue}><time datetime={gig.date}>{label(gig.date)}</time><div><h3>{gig.venue}</h3><p>{gig.location}</p></div><span class="gig-lineup">{gig.lineup || 'Lineup to be confirmed'}</span></article>)}</div><p class="gig-note">For performance times and admission details, please contact the venue.</p><p id="no-gigs" hidden>No dates match this venue.</p></section></main>
+<script>
+ const filter=document.querySelector<HTMLSelectElement>('#venue-filter');
+ const rows=[...document.querySelectorAll<HTMLElement>('.gig-row[data-venue]')];
+ filter?.addEventListener('change',()=>{let count=0;rows.forEach(row=>{const show=!filter.value||row.dataset.venue===filter.value;row.hidden=!show;if(show)count++;});const counter=document.querySelector('#gig-count');if(counter)counter.textContent=count+' '+(count===1?'date':'dates');const empty=document.querySelector<HTMLElement>('#no-gigs');if(empty)empty.hidden=count>0;});
+</script>
+</Layout>
