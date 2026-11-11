@@ -27,6 +27,7 @@ for url in urls:
  path=urlsplit(url).path
  p=P();p.feed((root/'dist'/path.lstrip('/')/'index.html').read_text())
  assert p.canonical==[url],(path,p.canonical)
+ assert p.meta.get('google-site-verification')==config['googleSiteVerification']
  assert url.startswith(config['siteUrl']+'/'),url
  assert 'noindex' not in p.meta['robots']
  assert p.meta['og:url']==url and p.meta['twitter:card']=='summary_large_image'

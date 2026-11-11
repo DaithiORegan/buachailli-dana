@@ -126,3 +126,5 @@ The website is based in Kerry and takes bookings throughout Ireland, as confirme
 After publishing: add the production URL as a URL-prefix property in Google Search Console, verify ownership, submit /sitemap.xml and request indexing for the homepage and service pages. Search Console verification requires the owner’s Google account. SEO changes do not guarantee a particular ranking or an immediate listing. The preview-hosted copy is not being updated or submitted to Google.
 
 Run python3 scripts/check-seo.py after building to validate metadata, sitemap, structured data and indexing directives.
+
+Google Search Console: the owner-supplied HTML verification token is in googleSiteVerification in src/data/site.json and rendered in the shared head. Keep it in place after verification so Google can recheck ownership. This is a public verification identifier, not a login credential.

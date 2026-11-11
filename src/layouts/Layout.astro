@@ -16,6 +16,7 @@ const jsonLd=JSON.stringify({'@context':'https://schema.org','@graph':graph}).re
 <html lang="en">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  {site.googleSiteVerification && <meta name="google-site-verification" content={site.googleSiteVerification} />}
   <meta name="description" content={description} /><meta name="theme-color" content="#671d31" />
   <meta property="og:title" content={title} /><meta property="og:description" content={description} /><meta property="og:type" content="website" />
   <meta name="robots" content={noIndex || !site.allowIndexing ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
