@@ -20,3 +20,4 @@ jobs:
         env:
           ASTRO_TELEMETRY_DISABLED: '1'
       - run: python3 scripts/check-build.py
+      - run: python3 scripts/check-seo.py

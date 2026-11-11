@@ -20,3 +20,6 @@
 @media(max-width:800px){.gig-row{gap:20px;grid-template-columns:1fr 1fr}.gig-lineup{grid-column:2;justify-self:start}.gig-row time{grid-row:1/3;font-size:23px}}
 @media(max-width:560px){.live-page-heading h1{font-size:70px}.live-dates-page .section-heading .pill,.dates-preview .section-heading .pill{margin-top:25px}.gig-controls{align-items:start;flex-direction:column;gap:15px}.gig-controls label{width:100%}.gig-row{grid-template-columns:1fr;gap:10px;padding:25px 0}.gig-row time{grid-row:auto;font-size:23px}.gig-lineup{grid-column:auto;justify-self:start}.gig-row h3{font-size:17px}}
 .enquiry-form button:disabled{cursor:wait;opacity:.65}
+/* Search landing pages: straightforward booking information. */
+.service-page{display:grid;grid-template-columns:1fr 1fr;gap:70px}.service-page p{font-size:14px;margin-top:24px;max-width:600px}.service-page .pill{margin-top:30px}.service-details h3{font-size:28px;margin-top:35px;line-height:1.2}.service-details h3:first-child{margin-top:0}.service-details p{margin-top:15px}.inline-link{text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}.footer-links{flex-wrap:wrap}
+@media(max-width:800px){.service-page{grid-template-columns:1fr;gap:45px}.service-page h2{font-size:55px}}

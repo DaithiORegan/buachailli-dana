@@ -1,7 +1,16 @@
 ---
 import site from '../data/site.json';
 import '../styles.css';
-const { title = site.bandName + ' — Band & Solo Bookings | ' + site.name, description = site.description } = Astro.props;
+const { title = 'Buachailli Dana | Wedding Band & Solo Music in Kerry', description = site.description, noIndex = false, structuredData = [] } = Astro.props;
+const origin = Astro.site!;
+const canonical = new URL(Astro.url.pathname, origin).href;
+const image = new URL('/images/guitar.jpg', origin).href;
+const graph = [
+  {'@type':'MusicGroup','@id':new URL('/#band',origin).href,name:site.bandName,url:new URL('/wedding-band/',origin).href,description:'Kerry-based professional wedding and events band offering two- to five-piece lineups throughout Ireland.',email:site.email,telephone:site.phoneLink,location:{'@type':'AdministrativeArea',name:'County Kerry'},areaServed:{'@type':'Country',name:'Ireland'}},
+  {'@type':'Person','@id':new URL('/#solo',origin).href,name:site.name,url:new URL('/solo-musician/',origin).href,jobTitle:'Solo musician',homeLocation:{'@type':'AdministrativeArea',name:'County Kerry'},email:site.email,telephone:site.phoneLink},
+  ...structuredData
+];
+const jsonLd=JSON.stringify({'@context':'https://schema.org','@graph':graph}).replace(/</g,'\\u003c');
 ---
 <!doctype html>
 <html lang="en">
@@ -9,7 +18,13 @@ const { title = site.bandName + ' — Band & Solo Bookings | ' + site.name, desc
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content={description} /><meta name="theme-color" content="#671d31" />
   <meta property="og:title" content={title} /><meta property="og:description" content={description} /><meta property="og:type" content="website" />
-  {site.preview && <meta name="robots" content="noindex, nofollow" />}
+  <meta name="robots" content={noIndex || !site.allowIndexing ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
+  <link rel="canonical" href={canonical} />
+  <meta property="og:url" content={canonical} /><meta property="og:site_name" content="Buachailli Dana & Daithí O’Regan" />
+  <meta property="og:locale" content="en_IE" /><meta property="og:image" content={image} />
+  <meta property="og:image:alt" content="Illustrative acoustic guitar photograph" />
+  <meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content={title} /><meta name="twitter:description" content={description} /><meta name="twitter:image" content={image} />
+  <script type="application/ld+json" set:html={jsonLd}></script>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="preload" href="/fonts/barlow-700.ttf" as="font" type="font/ttf" crossorigin />
   <title>{title}</title>
@@ -23,7 +38,7 @@ const { title = site.bandName + ' — Band & Solo Bookings | ' + site.name, desc
   </header>
   <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation" hidden><a href="/#band">Band</a><a href="/#solo">Solo</a><a href="/setlist/">Setlist</a><a href="/live/">Live dates</a><a href="/#about">About</a><a href="/#contact">Bookings</a></nav>
   <slot />
-  <footer class="footer"><a class="footer-name" href="/">DAITHÍ O’REGAN<span>Band &amp; solo bookings</span></a><div class="footer-links"><a href="/press/">Booking information ↗</a><a href="/#main">Back to top ↑</a></div><div class="footer-bottom"><span>© {new Date().getFullYear()} {site.name}</span><span>Buachailli Dana · Two to five piece</span></div>{site.preview && <p class="preview-notice">Preview photography — images are illustrative, not photographs of Daithí or Buachailli Dana.</p>}</footer>
+  <footer class="footer"><a class="footer-name" href="/">DAITHÍ O’REGAN<span>Band &amp; solo bookings</span></a><div class="footer-links"><a href="/wedding-band/">Wedding band</a><a href="/solo-musician/">Solo music</a><a href="/press/">Booking information ↗</a><a href="/#main">Back to top ↑</a></div><div class="footer-bottom"><span>© {new Date().getFullYear()} {site.name}</span><span>Buachailli Dana · Two to five piece</span></div>{site.preview && <p class="preview-notice">Preview photography — images are illustrative, not photographs of Daithí or Buachailli Dana.</p>}</footer>
   <script>
     const button = document.querySelector<HTMLButtonElement>('.menu-toggle');
     const menu = document.querySelector<HTMLElement>('#mobile-menu');
